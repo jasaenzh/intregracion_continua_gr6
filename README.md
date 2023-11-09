@@ -91,8 +91,9 @@ Ejecute presionando F5 y valide que no se haya generado errores en tiempo de eje
 El script no contiene registros de prueb, razón por la cual se recomienda la insercion de data con propositos de pruebas. 
 Para ello puede hacer uso de la siguiente instruccion:
 
-INSERT INTO public."HrBitPed"(
-	pais, stamp_fecha, tasa, usuario, nacional_ndocumentos, nacional_kilos, nacional_unidadese, nacional_valor, exterior_ndocumentos, exterior_kilos, exterior_unidadese, exterior_valor, proformasn_ndocumentos, proformasn_kilos, proformasn_unidadese, proformasn_valor, proformase_ndocumentos, proformase_kilos, proformase_unidadese, proformase_valor)
-	VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+   ```sql
+   INSERT INTO public."HrBitPed"(
+      pais, stamp_fecha, tasa, usuario, nacional_ndocumentos, nacional_kilos, nacional_unidadese, nacional_valor, exterior_ndocumentos, exterior_kilos, exterior_unidadese, exterior_valor, proformasn_ndocumentos, proformasn_kilos, proformasn_unidadese, proformasn_valor, proformase_ndocumentos, proformase_kilos, proformase_unidadese, proformase_valor)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
 Este proyecto te permite crear un entorno de desarrollo local con PostgreSQL, PHP y pgAdmin para administrar la base de datos y listar registros desde una aplicación web.
