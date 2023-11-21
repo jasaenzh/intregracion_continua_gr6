@@ -29,12 +29,22 @@ services:
     container_name: php-server-integracion-continua
     restart: always
     ports:
-      - 8080:80
+      - "8080:80"
     volumes:
       - ./src:/var/www/html
       - ./config:/usr/local/etc/php
     depends_on:
       - pgadmin
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins-server-integracion-continua
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./jenkins_data:/var/jenkins_home
+
 volumes:
   src: {}
   config: {}
+  jenkins_data: {}

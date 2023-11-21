@@ -1,0 +1,17 @@
+jenkins_data/.cache
+jenkins_data/.java
+jenkins_data/nodes
+jenkins_data/secrets
+jenkins_data/updates
+jenkins_data/users
+jenkins_data/userContent
+jenkins_data/war
+jenkins_data/.lastStarted
+jenkins_data/config.xml
+jenkins_data/copy_reference_file.log
+jenkins_data/hudson.model.UpdateCenter.xml
+jenkins_data/jenkins.telemetry.Correlator.xml
+jenkins_data/nodeMonitors.xml
+jenkins_data/secret.key
+jenkins_data/secret.key.not-so-secret
+jenkins_data/*
