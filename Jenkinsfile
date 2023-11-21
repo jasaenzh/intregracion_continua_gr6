@@ -17,11 +17,11 @@ pipeline {
             }
         }
         
-        stage('Desplegar Aplicación') {
-            steps {
-                // Agrega pasos para el despliegue según sea necesario
-            }
-        }
+        // stage('Desplegar Aplicación') {
+        //     steps {
+        //         // Agrega pasos para el despliegue según sea necesario
+        //     }
+        // }
     }
     
     post {
