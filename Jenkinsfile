@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Clonar Repositorio') {
             steps {
-                git clone 'https://github.com/jasaenzh/intregracion_continua_gr6'
+                // git clone 'https://github.com/jasaenzh/intregracion_continua_gr6'
+                git --version
             }
         }
         
