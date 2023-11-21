@@ -41,8 +41,10 @@ services:
     container_name: jenkins-server-integracion-continua
     ports:
       - "8081:8080"
+      - "50001:50000"
     volumes:
-      - ./jenkins_data:/var/jenkins_home
+      - ./jenkins_home:/var/jenkins_home
+    restart: always
 
 volumes:
   src: {}
