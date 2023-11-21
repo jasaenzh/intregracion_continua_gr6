@@ -2,27 +2,25 @@ pipeline {
     agent any
     
     stages {
-        // stage('Clonar Repositorio') {
-        //     steps {
-        //         // git clone 'https://github.com/jasaenzh/intregracion_continua_gr6'
-        //         git --version
-        //     }
-        // }
-        
-        stage('Construir y Publicar Imagen Docker') {
+        stage('Clonar Repositorio') {
             steps {
                 script {
+                    sh 'rm -rf intregracion_continua_gr6'
                     sh 'git clone https://github.com/jasaenzh/intregracion_continua_gr6'
-                    sh 'ls'
                 }
             }
         }
         
-        // stage('Desplegar Aplicación') {
-        //     steps {
-        //         // Agrega pasos para el despliegue según sea necesario
-        //     }
-        // }
+        stage('Construir y Publicar Imagen Docker') {
+            steps {
+                script {
+                    sh 'cd intregracion_continua_gr6'
+                    sh 'docker build -t build -t integracioncontinua .'
+                    //sh 'docker push integracioncontinua'
+                }
+            }
+        }
+        
     }
     
     post {
