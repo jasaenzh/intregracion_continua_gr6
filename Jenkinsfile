@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     sh 'cd intregracion_continua_gr6'
-                    sh 'docker build -t build integracioncontinua .'
+                    sh 'docker build -t integracioncontinua .'
                     //sh 'docker push integracioncontinua'
                 }
             }
