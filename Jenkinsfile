@@ -14,7 +14,7 @@ pipeline {
                 script {
                     // def dockerImage = docker.build('integracion-continua-gr6:version1')
                     // dockerImage.push()
-                    docker --version
+                    sh "docker --version"
                 }
             }
         }
