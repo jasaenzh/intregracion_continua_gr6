@@ -12,8 +12,9 @@ pipeline {
         stage('Construir y Publicar Imagen Docker') {
             steps {
                 script {
-                    def dockerImage = docker.build('integracion-continua-gr6:version1')
-                    dockerImage.push()
+                    // def dockerImage = docker.build('integracion-continua-gr6:version1')
+                    // dockerImage.push()
+                    docker --version
                 }
             }
         }
