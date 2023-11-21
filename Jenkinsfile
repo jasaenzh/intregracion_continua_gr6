@@ -18,7 +18,7 @@ pipeline {
                     //sh 'jenkins-plugin-cli --plugins docker-plugin:1.5'
                     //sh 'docker -version'
                     // git clone 'https://github.com/jasaenzh/intregracion_continua_gr6'
-                    sh 'git'
+                    sh 'git --version'
                 }
             }
         }
