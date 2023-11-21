@@ -1,34 +1,36 @@
 pipeline {
     agent any
-    
-    stages {
-        stage('Clonar Repositorio') {
-            steps {
-                script {
-                    sh 'rm -rf intregracion_continua_gr6'
-                    sh 'git clone https://github.com/jasaenzh/intregracion_continua_gr6'
-                }
-            }
-        }
-        
-        stage('Construir y Publicar Imagen Docker') {
-            steps {
-                script {
-                    sh 'cd intregracion_continua_gr6'
-                    sh 'docker build -t integracioncontinua .'
-                    //sh 'docker push integracioncontinua'
-                }
-            }
-        }
-        
+
+    environment {
+        GIT_REPO_URL = 'https://github.com/jasaenzh/intregracion_continua_gr6.git'
+        DOCKER_IMAGE_NAME = 'php'
+        DOCKERFILE_PATH = '.'  // Ruta al Dockerfile en el repositorio
     }
-    
+	
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', credentialsId: 'test', url: GIT_REPO_URL
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                  sh 'whoami'
+                  sh 'pwd'
+                  sh 'docker build -t php:v1 .'
+                }
+            }
+        }
+    }
+
     post {
         success {
-            echo '¡Despliegue exitoso!'
+            echo 'Pipeline ejecutado con éxito'
         }
         failure {
-            echo '¡Despliegue fallido!'
+            echo 'El pipeline ha fallado'
         }
     }
 }
